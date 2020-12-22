@@ -1,15 +1,37 @@
 package MainP;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 
 
 public class Main {
 		public static void main(String args[]) {
+
+			Biglietto a=new Biglietto("m", "6/6/1944",1,10.2);
+			Biglietto b=new Biglietto("p","1/2/1998",0,30.0);
+			Biglietto c=new Biglietto("m", "4/9/2020",1,10.2);
+			Biglietto d=new Biglietto("p","25/5/1492",0,30.0);
+			a.aggiungiBiglietto();
+			b.aggiungiBiglietto();
+			c.aggiungiBiglietto();
+			d.aggiungiBiglietto();
 			
+			b.rimuoviBiglietto();
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+/* ESEMPI
 // Creazione oggetti
 			JSONObject a=new JSONObject();
 			JSONObject b=new JSONObject();
@@ -48,7 +70,7 @@ public class Main {
 				  }	f.close();}catch(Exception e) {}
 			
 //Sia letturaa che scrittura si possono fare con array o con oggetto singolo			
-			
+*/			
 			
 			
 			

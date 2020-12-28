@@ -1,6 +1,5 @@
 package MainP;
 
-import java.awt.List;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -11,26 +10,27 @@ import org.json.JSONObject;
 public class Biglietto {
 	int id;
 	String ora;
-	String data;
+	Data data;
 	int  zona;
 	double prezzo;
 	static int idcount=0;
-	JSONObject biglietto;
+
 	
-	public Biglietto(	String o, String d, int z, double p) {
+	public Biglietto(	String o, Data d, int z, double p) {
        id=idcount++; ora=o; data=d; zona=z; prezzo=p;
 	}
 	
 	public void aggiungiBiglietto() {
-		JSONObject b=new JSONObject();
-		b.put("ora", ora);
-		b.put("data", data);
-		b.put("zona", zona);
-		b.put("prezzo", prezzo);
-		b.put("id", id);
-		biglietto=new JSONObject(b);
+		//Crea oggetto json
+		JSONObject biglietto=new JSONObject();
+		biglietto.put("ora", ora);
+		biglietto.put("data", data.toString());
+		biglietto.put("zona", zona);
+		biglietto.put("prezzo", prezzo);
+		biglietto.put("id", id);
+		//scrive su file
 		try(FileWriter f=new FileWriter("biglietti.json",true)){
-			f.write(b.toString());
+			f.write(biglietto.toString());
 			f.write("\n");
 		}catch(Exception e){}
 
@@ -39,6 +39,7 @@ public class Biglietto {
 	public void rimuoviBiglietto() {
 		String st;
 		ArrayList<JSONObject> jl=new ArrayList<JSONObject>();
+		// legge il file e salva gli elementi da tenere
 		try(FileReader f = new FileReader("biglietti.json")  ){
 			BufferedReader br = new BufferedReader(f);
 			 while ((st = br.readLine()) != null) {
@@ -48,12 +49,12 @@ public class Biglietto {
 				    }
 			  }
 			 f.close();}catch(Exception e) {}
-		
+		//svuota file
 		try{
 			FileWriter f=new FileWriter("biglietti.json");
 			f.close();
 			}catch(Exception e){}
-		
+		//riscrive il file
 		try{
 			FileWriter f=new FileWriter("biglietti.json",true);
 			for(int c=0;c<jl.size();c++) {

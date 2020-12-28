@@ -1,24 +1,29 @@
 package MainP;
 
+import java.io.FileWriter;
 
 public class Main {
 		public static void main(String args[]) {
 
-			Biglietto a=new Biglietto("m", "6/6/1944",1,10.2);
-			Biglietto b=new Biglietto("p","1/2/1998",0,30.0);
-			Biglietto c=new Biglietto("m", "4/9/2020",1,10.2);
-			Biglietto d=new Biglietto("p","25/5/1492",0,30.0);
-			a.aggiungiBiglietto();
-			b.aggiungiBiglietto();
-			c.aggiungiBiglietto();
-			d.aggiungiBiglietto();
+
+//   		    try{
+//			FileWriter f=new FileWriter("biglietti.json");
+//			f.close();
+//			}catch(Exception e){}
+//			Biglietto a=new Biglietto("m",new Data(1,2,1998),1,10.2);
+//			Biglietto b=new Biglietto("p",new Data(2,2,1998),0,30.0);
+//			Biglietto c=new Biglietto("m", new Data(3,2,1998),1,10.2);
+//			Biglietto d=new Biglietto("p",new Data(4,2,1998),0,30.0);
+//			a.aggiungiBiglietto();
+//			b.aggiungiBiglietto();
+//			c.aggiungiBiglietto();
+//			d.aggiungiBiglietto();
+//			
+//			b.rimuoviBiglietto();
 			
-			b.rimuoviBiglietto();
-			
-			
-			
-			
-			
+			Data a=new Data("1/2/1998");
+			System.out.print(a.toString());
+
 			
 			
 			

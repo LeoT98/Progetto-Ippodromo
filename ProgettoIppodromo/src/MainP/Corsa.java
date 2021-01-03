@@ -10,14 +10,14 @@ import org.json.JSONObject;
 public class Corsa {
 	int id, zona;
 	String ora;
-	Data data;
+	Date data;
 	int maxPartecipanti;
 //	ArrayList<Cavallo> cavalliIscritti=new ArrayList<Cavallo>();
 //	ArrayList<Fantino> cavalliIscritti=new ArrayList<Fantino>();
 	static int idcount=0;
 
 	
-	public Corsa(	String o, Data d, int z) {
+	public Corsa(	String o, Date d, int z) {
        id=idcount++; ora=o; data=d; maxPartecipanti=z;
 	}
 	

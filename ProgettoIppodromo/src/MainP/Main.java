@@ -21,7 +21,7 @@ public class Main {
 //			
 //			b.rimuoviBiglietto();
 			
-			Data a=new Data("1/2/1998");
+			Date a=new Date("1/2/1998");
 			System.out.print(a.toString());
 
 			

@@ -9,7 +9,7 @@ public class Iscrizione {
 	int idCavallo;
 	int idCorsa;
 	
-	public Iscrizione(int idFantino,int idCorsa,int idCavallo) {
+	public Iscrizione(int idFantino,int idCavallo,int idCorsa) {
 		this.idFantino=idFantino;
 		this.idCorsa=idCorsa;
 		this.idCavallo=idCavallo;

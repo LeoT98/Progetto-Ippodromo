@@ -30,7 +30,7 @@ public class Biglietto {
 		biglietto.put("data", data.toString());
 		biglietto.put("zona", zona);
 		biglietto.put("prezzo", prezzo);
-		biglietto.put("id", id);
+		biglietto.put("id", id); 
 		//scrive su file
 		try(FileWriter f=new FileWriter("biglietti.json",true)){
 			f.write(biglietto.toString());

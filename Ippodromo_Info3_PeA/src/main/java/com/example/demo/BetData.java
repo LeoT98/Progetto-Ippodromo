@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +15,7 @@ public class BetData {
 		@GetMapping("/nuovaScommessa")
 		public void addScommessa(@RequestParam(value = "IDCorsa", defaultValue = "m") String IDCorsa,
 												  @RequestParam(value = "IDCavallo", defaultValue = "1/1/1970") String IDCavallo,
-												  @RequestParam(value = "importo", defaultValue = "0") String importo,) {
+												  @RequestParam(value = "importo", defaultValue = "0") String importo) {
 			//TO DO
 		}
 		

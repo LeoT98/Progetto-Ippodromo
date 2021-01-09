@@ -58,4 +58,11 @@ public class Iscrizione {
 	public void setIdCorsa(int idCorsa) {
 		this.idCorsa = idCorsa;
 	}
+
+	public boolean checkID(int IDConf) {
+		if(this.idCorsa==IDConf) {
+			return true;
+		}
+		return false;
+	}
 }

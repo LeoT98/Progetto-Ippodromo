@@ -32,7 +32,7 @@ public class SubscritpionData {
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
 				    Iscrizione i=new Iscrizione((int)x.get("idFantino"),(int)x.get("idCavallo"),(int)x.get("idCorsa"));
-				    if((int)x.get("idCorsa")==Integer.parseInt(IDCorsa)) {
+				    if(i.checkID(Integer.parseInt(IDCorsa))) {
 				    		jl.add(i);
 				    }
 			  }

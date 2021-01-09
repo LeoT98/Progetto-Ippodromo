@@ -13,4 +13,23 @@ public class Date {
 	public String toString() {
 		return giorno+"/"+mese+"/"+anno;
 	}
+	
+	public boolean equals(Date dataConf) {
+		if(this.giorno==dataConf.giorno & this.mese==dataConf.mese & this.anno ==dataConf.anno) {
+			return true;
+		}
+		return false;
+	}
+	public int getGiorno() {
+		return giorno;
+	}
+
+	public int getMese() {
+		return mese;
+	}
+
+	public int getAnno() {
+		return anno;
+	}
+
 }

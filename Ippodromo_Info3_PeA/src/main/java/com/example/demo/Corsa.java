@@ -24,6 +24,12 @@ public class Corsa {
 	    id=idcount++; ora=o; data=new Date(d); maxPartecipanti=z;
 	}	
 	
+	public Corsa(String ora, String data, int maxPartecipanti, int id) {
+		this.ora=ora;
+		this.data=new Date(data);
+		this.id=id;
+		this.maxPartecipanti=maxPartecipanti;
+	}
 	public void aggiungiCorsa() {
 		JSONObject corsa=new JSONObject();
 		corsa.put("ora", ora);
@@ -64,6 +70,26 @@ public class Corsa {
 				f.write("\n");
 			}	f.close();	}catch(Exception e){}
 	}
-	
+	public int getId() {
+		return id;
+	}
+
+	public String getOra() {
+		return ora;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public int getMaxPartecipanti() {
+		return maxPartecipanti;
+	}
+	public static int getIdcount() {
+		return 0;
+	}
+
+
+
 	
 }

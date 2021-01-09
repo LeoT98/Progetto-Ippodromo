@@ -5,9 +5,9 @@ import java.io.FileWriter;
 import org.json.JSONObject;
 
 public class Iscrizione {
-	int idFantino;
-	int idCavallo;
-	int idCorsa;
+	private int idFantino;
+	private int idCavallo;
+	private int idCorsa;
 	
 	public Iscrizione(int idFantino,int idCavallo,int idCorsa) {
 		this.idFantino=idFantino;
@@ -15,6 +15,12 @@ public class Iscrizione {
 		this.idCavallo=idCavallo;
 	}
 	
+	public Iscrizione() {
+		this.idFantino=999999;
+		this.idCorsa=999999;
+		this.idCavallo=999999;
+	}
+
 	public void aggiungiIscrizione() {
 		//Crea oggetto json
 		JSONObject iscrizioni=new JSONObject();
@@ -27,5 +33,29 @@ public class Iscrizione {
 			f.write("\n");
 		}catch(Exception e){}
 
+	}
+
+	public int getIdFantino() {
+		return idFantino;
+	}
+
+	public void setIdFantino(int idFantino) {
+		this.idFantino = idFantino;
+	}
+
+	public int getIdCavallo() {
+		return idCavallo;
+	}
+
+	public void setIdCavallo(int idCavallo) {
+		this.idCavallo = idCavallo;
+	}
+
+	public int getIdCorsa() {
+		return idCorsa;
+	}
+
+	public void setIdCorsa(int idCorsa) {
+		this.idCorsa = idCorsa;
 	}
 }

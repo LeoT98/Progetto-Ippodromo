@@ -1,5 +1,6 @@
 package com.example.demo;
 import java.io.FileWriter;
+import java.io.IOException;
 
 import org.json.JSONObject;
 
@@ -31,6 +32,22 @@ public class Fantino {
 		}catch(IOException e) {
 			
 		}
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getCognome() {
+		return cognome;
+	}
+
+	public String getScuderia() {
+		return scuderia;
 	}
 
 

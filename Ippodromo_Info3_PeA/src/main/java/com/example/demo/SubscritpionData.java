@@ -17,7 +17,6 @@ public class SubscritpionData {
 	public void aggiungiIscrizione(@RequestParam(value = "idFantino", defaultValue = "999999") String idFantino,
 			@RequestParam(value = "idCavallo", defaultValue = "999999") String idCavallo,
 			@RequestParam(value = "idCorsa", defaultValue = "999999") String idCorsa) {
-		System.out.println("prova");
 		Iscrizione i=new Iscrizione(Integer.parseInt(idFantino),Integer.parseInt(idCavallo),Integer.parseInt(idCorsa));
 		i.aggiungiIscrizione();
 	}

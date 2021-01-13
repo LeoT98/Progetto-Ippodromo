@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class SubscritpionData {
+public class DatiIscrizione {
 
 	@GetMapping("/aggiungiIscrizione")
 	public void aggiungiIscrizione(@RequestParam(value = "idFantino", defaultValue = "999999") String idFantino,

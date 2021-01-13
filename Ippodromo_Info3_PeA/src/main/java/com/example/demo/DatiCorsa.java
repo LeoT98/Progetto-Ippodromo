@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class RaceData {
+public class DatiCorsa {
 
 	@GetMapping("/addCorsa")
 	public void addCorsa(@RequestParam(value = "ora", defaultValue = "m") String ora,
@@ -24,7 +24,7 @@ public class RaceData {
 	
 	@GetMapping("/mostraCorse")
 	public List<Corsa> greeting(@RequestParam(value = "data", defaultValue = "999999") String dataInput) {
-		Date dataConf=new Date(dataInput);
+		Data dataConf=new Data(dataInput);
 		String st;
 		List<Corsa> jl=new ArrayList<Corsa>();
 		// legge il file e salva gli elementi da tenere

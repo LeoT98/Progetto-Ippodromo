@@ -10,23 +10,23 @@ import org.json.JSONObject;
 public class Corsa {
 	int id;
 	String ora;
-	Date data;
+	Data data;
 	int maxPartecipanti;
 //	ArrayList<Cavallo> cavalliIscritti=new ArrayList<Cavallo>();
 //	ArrayList<Fantino> cavalliIscritti=new ArrayList<Fantino>();
 	static int idcount=0;
 
 	
-	public Corsa(	String o, Date d, int z) {
+	public Corsa(	String o, Data d, int z) {
        id=idcount++; ora=o; data=d; maxPartecipanti=z;
 	}
 	public Corsa(	String o, String d, int z) {
-	    id=idcount++; ora=o; data=new Date(d); maxPartecipanti=z;
+	    id=idcount++; ora=o; data=new Data(d); maxPartecipanti=z;
 	}	
 	
 	public Corsa(String ora, String data, int maxPartecipanti, int id) {
 		this.ora=ora;
-		this.data=new Date(data);
+		this.data=new Data(data);
 		this.id=id;
 		this.maxPartecipanti=maxPartecipanti;
 	}
@@ -78,7 +78,7 @@ public class Corsa {
 		return ora;
 	}
 
-	public Date getData() {
+	public Data getData() {
 		return data;
 	}
 

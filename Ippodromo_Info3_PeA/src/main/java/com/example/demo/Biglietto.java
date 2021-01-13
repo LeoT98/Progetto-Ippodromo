@@ -10,17 +10,17 @@ import org.json.JSONObject;
 public class Biglietto {
 	int id;
 	String ora;
-	Date data;
+	Data data;
 	int  zona;
 	double prezzo;
 	static int idcount=0;
 
 	
-	public Biglietto(	String o, Date d, int z, double p) {
+	public Biglietto(	String o, Data d, int z, double p) {
        id=idcount++; ora=o; data=d; zona=z; prezzo=p;
 	}
 	public Biglietto(	String o, String d, int z, double p) {
-	    id=idcount++; ora=o; data=new Date(d); zona=z; prezzo=p;
+	    id=idcount++; ora=o; data=new Data(d); zona=z; prezzo=p;
 	}
 	
 	public void aggiungiBiglietto() {

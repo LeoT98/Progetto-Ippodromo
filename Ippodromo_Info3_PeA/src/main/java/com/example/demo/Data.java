@@ -1,11 +1,11 @@
 package com.example.demo;
 
-public class Date {
+public class Data {
 	int giorno, mese, anno;
-	public Date(int g, int m, int a) {
+	public Data(int g, int m, int a) {
 		giorno=g;  mese=m;  anno=a;
 	}
-	public Date(String d) {
+	public Data(String d) {
 		String[] s=d.split("/");
 		giorno=Integer.parseInt(s[0]);  mese=Integer.parseInt(s[1]);   anno=Integer.parseInt(s[2]); 
 	}
@@ -14,7 +14,7 @@ public class Date {
 		return giorno+"/"+mese+"/"+anno;
 	}
 	
-	public boolean equals(Date dataConf) {
+	public boolean equals(Data dataConf) {
 		if(this.giorno==dataConf.giorno & this.mese==dataConf.mese & this.anno ==dataConf.anno) {
 			return true;
 		}

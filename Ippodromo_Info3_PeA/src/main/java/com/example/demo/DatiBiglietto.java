@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class TicketData {
+public class DatiBiglietto {
 
 	@GetMapping("/addBiglietto")
 	public void addBiglietto(@RequestParam(value = "ora", defaultValue = "m") String ora,

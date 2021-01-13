@@ -33,7 +33,7 @@ public class DatiCorsa {
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
 				    Corsa i=new Corsa((String)x.get("ora"),(String)x.get("data"),(int)x.get("maxPartecipanti"),(int)x.get("id"));
-				    if(i.data.equals(dataConf)) {
+				    if(i.getData().equals(dataConf)) {
 				    		jl.add(i);
 				    }
 			  }

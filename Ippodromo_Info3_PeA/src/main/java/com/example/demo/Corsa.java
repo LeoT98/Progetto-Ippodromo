@@ -8,10 +8,9 @@ import java.util.ArrayList;
 import org.json.JSONObject;
 
 public class Corsa {
-	int id;
-	String ora;
-	Data data;
-	int maxPartecipanti;
+	private int id, maxPartecipanti;;
+	private String ora;
+	private Data data;
 //	ArrayList<Cavallo> cavalliIscritti=new ArrayList<Cavallo>();
 //	ArrayList<Fantino> cavalliIscritti=new ArrayList<Fantino>();
 	static int idcount=0;

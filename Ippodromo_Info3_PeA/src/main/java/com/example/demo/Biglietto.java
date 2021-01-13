@@ -8,12 +8,11 @@ import java.util.ArrayList;
 import org.json.JSONObject;
 
 public class Biglietto {
-	int id;
-	String ora;
-	Data data;
-	int  zona;
-	double prezzo;
-	static int idcount=0;
+	private int id, zona;
+	private String ora;
+	private Data data;
+	private double prezzo;
+	private static int idcount=0;
 
 	
 	public Biglietto(	String o, Data d, int z, double p) {
@@ -36,7 +35,6 @@ public class Biglietto {
 			f.write(biglietto.toString());
 			f.write("\n");
 		}catch(Exception e){}
-
 	}
 	
 	public void rimuoviBiglietto() {
@@ -74,6 +72,22 @@ public class Biglietto {
 		biglietto.put("prezzo", prezzo);
 		biglietto.put("id", id);
 		return biglietto.toString();
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public String getOra() {
+		return ora;
+	}
+	public Data getData() {
+		return data;
+	}
+	public int getZona() {
+		return zona;
+	}
+	public double getPrezzo() {
+		return prezzo;
 	}
 	
 	

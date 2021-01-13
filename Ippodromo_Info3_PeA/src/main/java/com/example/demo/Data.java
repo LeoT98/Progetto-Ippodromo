@@ -1,7 +1,7 @@
 package com.example.demo;
 
 public class Data {
-	int giorno, mese, anno;
+	private int giorno, mese, anno;
 	public Data(int g, int m, int a) {
 		giorno=g;  mese=m;  anno=a;
 	}

@@ -23,7 +23,7 @@ public class DatiScommessa {
 		}
 		
 		@GetMapping("/mostraQuote")
-		public List<Quota> showQuote(@RequestParam(value = "IDCorsa", defaultValue = "-1") String IDCorsa) {
+		public List<Quota> mostraQuote(@RequestParam(value = "IDCorsa", defaultValue = "-1") String IDCorsa) {
 			String stringa;
 			List<Quota> listaQuote = new ArrayList<Quota>();
 			// legge il file e salva gli elementi da tenere

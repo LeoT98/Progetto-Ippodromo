@@ -23,7 +23,7 @@ public class DatiCorsa {
 	}
 	
 	@GetMapping("/mostraCorse")
-	public List<Corsa> greeting(@RequestParam(value = "data", defaultValue = "999999") String dataInput) {
+	public List<Corsa> mostraCorse(@RequestParam(value = "data", defaultValue = "999999") String dataInput) {
 		Data dataConf=new Data(dataInput);
 		String st;
 		List<Corsa> jl=new ArrayList<Corsa>();

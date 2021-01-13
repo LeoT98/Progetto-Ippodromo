@@ -22,7 +22,7 @@ public class DatiIscrizione {
 	}
 	
 	@GetMapping("/mostraIscrizioni")
-	public List<Iscrizione> greeting(@RequestParam(value = "IDCorsa", defaultValue = "999999") String IDCorsa) {
+	public List<Iscrizione> mostraIscrizioni(@RequestParam(value = "IDCorsa", defaultValue = "999999") String IDCorsa) {
 		String st;
 		List<Iscrizione> jl=new ArrayList<Iscrizione>();
 		// legge il file e salva gli elementi da tenere

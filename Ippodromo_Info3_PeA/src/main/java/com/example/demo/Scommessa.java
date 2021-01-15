@@ -5,16 +5,16 @@ import org.json.JSONObject;
 
 public class Scommessa {
 	private int id;
-	private int IDCorsa;
-	private int cavallo; 
+	private int idCorsa;
+	private int idCavallo; 
 	private double importo;
 	
 	private static int idcount = 0;
 	
 	public Scommessa(int IDCorsa, int cavallo, double importo) {
 		this.id = idcount++;
-		this.IDCorsa = IDCorsa;
-		this.cavallo = cavallo;
+		this.idCorsa = IDCorsa;
+		this.idCavallo = cavallo;
 		this.importo = importo;
 	}
 
@@ -23,11 +23,11 @@ public class Scommessa {
 	}
 
 	public int getIDCorsa() {
-		return IDCorsa;
+		return idCorsa;
 	}
 
 	public int getCavallo() {
-		return cavallo;
+		return idCavallo;
 	}
 
 	public double getImporto() {
@@ -38,8 +38,8 @@ public class Scommessa {
 		//Crea oggetto json
 		JSONObject scommessa =new JSONObject();
 		scommessa.put("IDScommessa", id);
-		scommessa.put("IDCorsa", IDCorsa);
-		scommessa.put("Cavallo", cavallo);
+		scommessa.put("idCorsa", idCorsa);
+		scommessa.put("Cavallo", idCavallo);
 		scommessa.put("importo", importo);
 		//scrive su file
 		try(FileWriter f=new FileWriter("Scommesse.json",true)){

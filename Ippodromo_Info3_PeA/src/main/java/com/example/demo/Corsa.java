@@ -11,9 +11,7 @@ public class Corsa {
 	private int id, maxPartecipanti;;
 	private String ora;
 	private Data data;
-//	ArrayList<Cavallo> cavalliIscritti=new ArrayList<Cavallo>();
-//	ArrayList<Fantino> cavalliIscritti=new ArrayList<Fantino>();
-	static int idcount=0;
+	static private int idcount=0;
 
 	
 	public Corsa(	String o, Data d, int z) {
@@ -35,7 +33,6 @@ public class Corsa {
 		corsa.put("data", data);
 		corsa.put("maxPartecipanti", maxPartecipanti);
 		corsa.put("id", id);
-//    aggiungere cavallo e fantino		///////////////////////////////////////
 		
 		try(FileWriter f=new FileWriter("corse.json",true)){
 			f.write(corsa.toString());

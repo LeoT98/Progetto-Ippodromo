@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class DatiScommessa {
 
 
-		@GetMapping("/nuovaScommessa")
-		public void addScommessa(@RequestParam(value = "IDCorsa", defaultValue = "-1") String IDCorsa,
+		@GetMapping("/aggiungiScommessa")
+		public void aggiungiScommessa(@RequestParam(value = "IDCorsa", defaultValue = "-1") String IDCorsa,
 												  @RequestParam(value = "IDCavallo", defaultValue = "-1") String IDCavallo,
 												  @RequestParam(value = "importo", defaultValue = "-1") String importo) {
 			Scommessa s = new Scommessa(Integer.parseInt(IDCorsa), Integer.parseInt(IDCavallo), Double.parseDouble(importo));

@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DatiCorsa {
 
-	@GetMapping("/addCorsa")
-	public void addCorsa(@RequestParam(value = "ora", defaultValue = "m") String ora,
+	@GetMapping("/aggiungiCorsa")
+	public void aggiungiCorsa(@RequestParam(value = "ora", defaultValue = "m") String ora,
 										 @RequestParam(value = "data", defaultValue = "1/1/1970") String data,
 										 @RequestParam(value = "maxP", defaultValue = "0") String maxP) {
 		Corsa b= new Corsa(ora,data,Integer.parseInt(maxP)) ;

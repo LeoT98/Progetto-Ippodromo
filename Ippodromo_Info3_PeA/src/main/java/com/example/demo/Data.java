@@ -2,6 +2,7 @@ package com.example.demo;
 
 public class Data {
 	private int giorno, mese, anno;
+	
 	public Data(int g, int m, int a) {
 		giorno=g;  mese=m;  anno=a;
 	}

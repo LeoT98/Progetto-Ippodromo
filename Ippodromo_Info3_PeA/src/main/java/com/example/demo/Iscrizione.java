@@ -15,11 +15,6 @@ public class Iscrizione {
 		this.idCavallo=idCavallo;
 	}
 	
-	public Iscrizione() {
-		this.idFantino=999999;
-		this.idCorsa=999999;
-		this.idCavallo=999999;
-	}
 
 	public void aggiungiIscrizione() {
 		//Crea oggetto json

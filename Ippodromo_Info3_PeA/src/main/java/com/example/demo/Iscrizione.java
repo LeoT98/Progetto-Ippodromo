@@ -39,25 +39,16 @@ public class Iscrizione {
 		return idFantino;
 	}
 
-	public void setIdFantino(int idFantino) {
-		this.idFantino = idFantino;
-	}
 
 	public int getIdCavallo() {
 		return idCavallo;
 	}
 
-	public void setIdCavallo(int idCavallo) {
-		this.idCavallo = idCavallo;
-	}
 
 	public int getIdCorsa() {
 		return idCorsa;
 	}
 
-	public void setIdCorsa(int idCorsa) {
-		this.idCorsa = idCorsa;
-	}
 
 	public boolean checkID(int IDConf) {
 		if(this.idCorsa==IDConf) {

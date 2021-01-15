@@ -13,5 +13,12 @@ class IscrizioneTest {
 		assertEquals(2,i.getIdCavallo());
 		assertEquals(3,i.getIdCorsa());
 	}
+	
+	@Test
+	void checkTest() {
+		Iscrizione i=new Iscrizione(1,2,3);
+		assertTrue(i.checkID(3));
+		assertFalse(i.checkID(4));
+		}
 
 }

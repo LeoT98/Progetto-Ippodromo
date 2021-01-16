@@ -8,6 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DatiBiglietto {
 
+	/**
+	 * aggiunge un biglietto al file 'biglietti.json'
+	 * 
+	 * @param ora
+	 * @param data
+	 * @param zona
+	 * @param prezzo
+	 */
 	@GetMapping("/aggiungiBiglietto")
 	public void aggiungiBiglietto(@RequestParam(value = "ora", defaultValue = "m") String ora,
 											  @RequestParam(value = "data", defaultValue = "1/1/1970") String data,

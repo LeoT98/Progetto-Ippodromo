@@ -13,7 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DatiScommessa {
 
-
+/**
+ * aggiunge una nuova scommessa
+ * @param idCorsa
+ * @param idCavallo
+ * @param importo
+ */
 		@GetMapping("/aggiungiScommessa")
 		public void aggiungiScommessa(@RequestParam(value = "IDCorsa", defaultValue = "-1") String idCorsa,
 												  @RequestParam(value = "IDCavallo", defaultValue = "-1") String idCavallo,
@@ -21,7 +26,11 @@ public class DatiScommessa {
 			Scommessa s = new Scommessa(Integer.parseInt(idCorsa), Integer.parseInt(idCavallo), Double.parseDouble(importo));
 			s.aggiungiScommessa();
 		}
-		
+	/**
+	 * mostra le quote attuali di una corsa
+	 * @param idCorsa
+	 * @return
+	 */
 		@GetMapping("/mostraQuote")
 		public List<Quota> mostraQuote(@RequestParam(value = "IDCorsa", defaultValue = "-1") String idCorsa) {
 			String stringa;
@@ -40,6 +49,11 @@ public class DatiScommessa {
 			return listaQuote;
 		}
 		
+		/** 
+		 * mostra le scommesse di una certa corsa
+		 * @param idCorsa
+		 * @return
+		 */
 		@GetMapping("/mostraScommesse")
 		public List<Scommessa> mostraScommesse(@RequestParam(value = "IDCorsa", defaultValue = "1") String idCorsa) {
 			String stringa;

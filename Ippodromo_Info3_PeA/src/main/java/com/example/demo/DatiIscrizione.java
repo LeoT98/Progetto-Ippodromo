@@ -12,7 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DatiIscrizione {
-
+/**
+ * aggiunge una nuova iscrizione al file 'iscrizioni.json'
+ * @param idFantino
+ * @param idCavallo
+ * @param idCorsa
+ */
 	@GetMapping("/aggiungiIscrizione")
 	public void aggiungiIscrizione(@RequestParam(value = "idFantino", defaultValue = "999999") String idFantino,
 			@RequestParam(value = "idCavallo", defaultValue = "999999") String idCavallo,
@@ -21,6 +26,11 @@ public class DatiIscrizione {
 		i.aggiungiIscrizione();
 	}
 	
+	/**
+	 * mostra le iscrizioni salvate in 'iscrizioni.json'
+	 * @param idCorsa
+	 * @return
+	 */
 	@GetMapping("/mostraIscrizioni")
 	public List<Iscrizione> mostraIscrizioni(@RequestParam(value = "IDCorsa", defaultValue = "999999") String idCorsa) {
 		String st;

@@ -13,7 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DatiCorsa {
-
+/**
+ * aggiunge una nuova corsa al file 'corse.json'
+ * 
+ * @param ora
+ * @param data
+ * @param maxP
+ */
 	@GetMapping("/aggiungiCorsa")
 	public void aggiungiCorsa(@RequestParam(value = "ora", defaultValue = "m") String ora,
 										 @RequestParam(value = "data", defaultValue = "1/1/1970") String data,
@@ -22,6 +28,11 @@ public class DatiCorsa {
 		b.aggiungiCorsa();
 	}
 	
+	/**
+	 * mostra le corse contenute nel file 'corse.json'
+	 * @param dataInput
+	 * @return
+	 */
 	@GetMapping("/mostraCorse")
 	public List<Corsa> mostraCorse(@RequestParam(value = "data", defaultValue = "999999") String dataInput) {
 		Data dataConf=new Data(dataInput);

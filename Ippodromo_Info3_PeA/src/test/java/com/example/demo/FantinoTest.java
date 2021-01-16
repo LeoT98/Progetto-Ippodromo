@@ -2,6 +2,13 @@ package com.example.demo;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 class FantinoTest {
@@ -20,20 +27,4 @@ class FantinoTest {
 		Fantino f2=new Fantino("nome","cognome","scuderia");
 		assertEquals(f2.getId(),1);
 	}
-
-	@Test
-	void testGetNome() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetCognome() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetScuderia() {
-		fail("Not yet implemented");
-	}
-
 }

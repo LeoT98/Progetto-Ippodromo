@@ -19,21 +19,6 @@ public class Cavallo {
 		this.razza = razza;
 	}
 	
-	void aggiungiCavallo(String nome, String scuderia, String razza) {
-		JSONObject cavallo = new JSONObject();
-		cavallo.put("ID", id);
-		cavallo.put("Nome", nome);
-		cavallo.put("Scuderia", scuderia);
-		cavallo.put("Razza", razza);
-		
-		try(FileWriter f = new FileWriter("Elenco_Cavalli.json")){
-			f.write(cavallo.toString());
-			f.write("\n");
-		}catch(IOException e) {
-			
-		}
-	}
-	
 	public int getId() {
 		return id;
 	}

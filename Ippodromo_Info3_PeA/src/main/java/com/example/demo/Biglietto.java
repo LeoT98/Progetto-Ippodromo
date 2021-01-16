@@ -8,19 +8,18 @@ import java.util.ArrayList;
 import org.json.JSONObject;
 
 public class Biglietto {
-	int id;
-	String ora;
-	Date data;
-	int  zona;
-	double prezzo;
-	static int idcount=0;
+	private int id, zona;
+	private String ora;
+	private Data data;
+	private double prezzo;
+	private static int idcount=0;
 
 	
-	public Biglietto(	String o, Date d, int z, double p) {
+	public Biglietto(	String o, Data d, int z, double p) {
        id=idcount++; ora=o; data=d; zona=z; prezzo=p;
 	}
 	public Biglietto(	String o, String d, int z, double p) {
-	    id=idcount++; ora=o; data=new Date(d); zona=z; prezzo=p;
+	    id=idcount++; ora=o; data=new Data(d); zona=z; prezzo=p;
 	}
 	
 	public void aggiungiBiglietto() {
@@ -30,13 +29,12 @@ public class Biglietto {
 		biglietto.put("data", data.toString());
 		biglietto.put("zona", zona);
 		biglietto.put("prezzo", prezzo);
-		biglietto.put("id", id);
+		biglietto.put("id", id); 
 		//scrive su file
 		try(FileWriter f=new FileWriter("biglietti.json",true)){
 			f.write(biglietto.toString());
 			f.write("\n");
 		}catch(Exception e){}
-
 	}
 	
 	public void rimuoviBiglietto() {
@@ -74,6 +72,22 @@ public class Biglietto {
 		biglietto.put("prezzo", prezzo);
 		biglietto.put("id", id);
 		return biglietto.toString();
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public String getOra() {
+		return ora;
+	}
+	public Data getData() {
+		return data;
+	}
+	public int getZona() {
+		return zona;
+	}
+	public double getPrezzo() {
+		return prezzo;
 	}
 	
 	

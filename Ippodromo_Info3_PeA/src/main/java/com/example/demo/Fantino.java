@@ -19,21 +19,6 @@ public class Fantino {
 		this.scuderia = scuderia;
 	}
 	
-	void aggiungiFantino(String nome, String cognome, String scuderia) {
-		JSONObject fantino = new JSONObject();
-		fantino.put("ID", id);
-		fantino.put("Nome", nome);
-		fantino.put("Cognome", cognome);
-		fantino.put("Scuderia", scuderia);
-		
-		try(FileWriter f = new FileWriter("Elenco_Fantini.json")){
-			f.write(fantino.toString());
-			f.write("\n");
-		}catch(IOException e) {
-			
-		}
-	}
-	
 	public int getId() {
 		return id;
 	}

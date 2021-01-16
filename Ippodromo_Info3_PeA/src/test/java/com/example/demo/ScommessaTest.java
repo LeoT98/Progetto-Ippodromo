@@ -33,26 +33,26 @@ class ScommessaTest {
 	void aggiungiTest() {
 		
 		Scommessa m=new Scommessa(999999,2,3);
-		m.aggiungiScommessa();;
+		m.aggiungiScommessa();
 		String st;
 		List<Scommessa> jl=new ArrayList<Scommessa>();
 		// legge il file e salva gli elementi da tenere
-		try(FileReader f = new FileReader("Quote.json")  ){
+		try(FileReader f = new FileReader("Scommesse.json")  ){
 			BufferedReader br = new BufferedReader(f);
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
-				    Quota i=new Quota((int)x.get("idCorsa"),(int)x.get("idCavallo"),(int)x.get("Valore"));
-				    if(i.checkID(999999)) {
+				    Scommessa i=new Scommessa((int)x.get("idCorsa"),(int)x.get("Cavallo"),(int)x.get("importo"));
+				    if(i.getIDCorsa()==999999) {
 				    		jl.add(i);
 				    }
 			  }
 			 f.close();}catch(Exception e) {}
-		assertTrue(jl.get(0).checkID(999999));
-		
+		assertTrue(jl.get(0).getIDCorsa()==999999);
+
 		String st1;
 		ArrayList<JSONObject> jl1=new ArrayList<JSONObject>();
 		// legge il file e salva gli elementi da tenere
-		try(FileReader f = new FileReader("Quote.json")  ){
+		try(FileReader f = new FileReader("Scommesse.json")  ){
 			BufferedReader br = new BufferedReader(f);
 			 while ((st1 = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st1);
@@ -63,7 +63,7 @@ class ScommessaTest {
 			 f.close();}catch(Exception e) {}
 		//svuota file
 		try{
-			FileWriter f=new FileWriter("Quote.json");
+			FileWriter f=new FileWriter("Scommesse.json");
 			f.close();
 			}catch(Exception e){}
 		//riscrive il file

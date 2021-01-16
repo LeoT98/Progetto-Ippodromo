@@ -37,7 +37,7 @@ public class Scommessa {
 	public void aggiungiScommessa() {
 		//Crea oggetto json
 		JSONObject scommessa =new JSONObject();
-		scommessa.put("IDScommessa", id);
+		scommessa.put("idScommessa", id);
 		scommessa.put("idCorsa", idCorsa);
 		scommessa.put("Cavallo", idCavallo);
 		scommessa.put("importo", importo);

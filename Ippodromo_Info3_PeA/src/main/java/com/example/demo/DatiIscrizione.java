@@ -22,7 +22,7 @@ public class DatiIscrizione {
 	}
 	
 	@GetMapping("/mostraIscrizioni")
-	public List<Iscrizione> mostraIscrizioni(@RequestParam(value = "IDCorsa", defaultValue = "999999") String IDCorsa) {
+	public List<Iscrizione> mostraIscrizioni(@RequestParam(value = "IDCorsa", defaultValue = "999999") String idCorsa) {
 		String st;
 		List<Iscrizione> jl=new ArrayList<Iscrizione>();
 		// legge il file e salva gli elementi da tenere
@@ -31,7 +31,7 @@ public class DatiIscrizione {
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
 				    Iscrizione i=new Iscrizione((int)x.get("idFantino"),(int)x.get("idCavallo"),(int)x.get("idCorsa"));
-				    if(i.checkID(Integer.parseInt(IDCorsa))) {
+				    if(i.checkID(Integer.parseInt(idCorsa))) {
 				    		jl.add(i);
 				    }
 			  }

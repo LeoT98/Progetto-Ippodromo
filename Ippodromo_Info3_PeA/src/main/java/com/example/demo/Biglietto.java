@@ -14,14 +14,31 @@ public class Biglietto {
 	private double prezzo;
 	private static int idcount=0;
 
-	
+	/**
+	 * costruttore che prende, come data, un  oggetto Data
+	 * @param o
+	 * @param d oggetto Data
+	 * @param z
+	 * @param p
+	 */
 	public Biglietto(	String o, Data d, int z, double p) {
        id=idcount++; ora=o; data=d; zona=z; prezzo=p;
 	}
+	
+	/**
+	 * costruttore che prende, come data, una stringa
+	 * @param o
+	 * @param d stringa che indica la data, formato g/m/a
+	 * @param z
+	 * @param p
+	 */
 	public Biglietto(	String o, String d, int z, double p) {
 	    id=idcount++; ora=o; data=new Data(d); zona=z; prezzo=p;
 	}
 	
+	/**
+	 * aggiunge il biglietto al file 'biglietti.json'
+	 */
 	public void aggiungiBiglietto() {
 		//Crea oggetto json
 		JSONObject biglietto=new JSONObject();
@@ -37,6 +54,9 @@ public class Biglietto {
 		}catch(Exception e){}
 	}
 	
+	/**
+	 * rimuove il biglietto dal file 'biglietti.json'
+	 */
 	public void rimuoviBiglietto() {
 		String st;
 		ArrayList<JSONObject> jl=new ArrayList<JSONObject>();
@@ -64,6 +84,9 @@ public class Biglietto {
 			}	f.close();	}catch(Exception e){}
 	}
 	
+	/**
+	 * ritorna, come String, il bilgietto in formato json
+	 */
 	public String toString() {
 		JSONObject biglietto=new JSONObject();
 		biglietto.put("ora", ora);

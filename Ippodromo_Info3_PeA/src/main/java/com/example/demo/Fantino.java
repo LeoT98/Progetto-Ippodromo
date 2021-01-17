@@ -1,8 +1,4 @@
 package com.example.demo;
-import java.io.FileWriter;
-import java.io.IOException;
-
-import org.json.JSONObject;
 
 public class Fantino {
 	private int id;

@@ -13,20 +13,43 @@ public class Corsa {
 	private Data data;
 	static private int idcount=0;
 
-	
+	/**
+	 * costruttore che usa un oggeto Data
+	 * @param o
+	 * @param d oggetto Data
+	 * @param z
+	 */
 	public Corsa(	String o, Data d, int z) {
        id=idcount++; ora=o; data=d; maxPartecipanti=z;
 	}
+	
+	/**
+	 * costruttore che usa una stringa peer la data
+	 * @param o
+	 * @param d stringa che rappresenta la data, g/m/a
+	 * @param z
+	 */
 	public Corsa(	String o, String d, int z) {
 	    id=idcount++; ora=o; data=new Data(d); maxPartecipanti=z;
 	}	
 	
+	/**
+	 * costruttore che permette di specificare l'id
+	 * @param ora
+	 * @param data data come stringa
+	 * @param maxPartecipanti
+	 * @param id
+	 */
 	public Corsa(String ora, String data, int maxPartecipanti, int id) {
 		this.ora=ora;
 		this.data=new Data(data);
 		this.id=id;
 		this.maxPartecipanti=maxPartecipanti;
 	}
+	
+	/**
+	 * aggiunge l'oggetto al file 'corse.json'
+	 */
 	public void aggiungiCorsa() {
 		JSONObject corsa=new JSONObject();
 		corsa.put("ora", ora);
@@ -40,7 +63,9 @@ public class Corsa {
 		}catch(Exception e){}
 	}
 	
-	
+	/**
+	 * rimuove la corsa dal file 'corse.json'
+	 */
 	public void rimuoviCorsa() {
 		String st;
 		ArrayList<JSONObject> jl=new ArrayList<JSONObject>();

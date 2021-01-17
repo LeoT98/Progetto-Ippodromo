@@ -9,13 +9,21 @@ public class Iscrizione {
 	private int idCavallo;
 	private int idCorsa;
 	
+	/**
+	 * 
+	 * @param idFantino
+	 * @param idCavallo
+	 * @param idCorsa
+	 */
 	public Iscrizione(int idFantino,int idCavallo,int idCorsa) {
 		this.idFantino=idFantino;
 		this.idCorsa=idCorsa;
 		this.idCavallo=idCavallo;
 	}
 	
-
+/**
+ * aggiunge l'iscrizione al file 'iscrizioni.json'
+ */
 	public void aggiungiIscrizione() {
 		//Crea oggetto json
 		JSONObject iscrizioni=new JSONObject();
@@ -44,7 +52,11 @@ public class Iscrizione {
 		return idCorsa;
 	}
 
-
+/**
+ * controlla se l'id di questa iscrizione corrisponde ad un certo id 
+ * @param IDConf
+ * @return
+ */
 	public boolean checkID(int IDConf) {
 		if(this.idCorsa==IDConf) {
 			return true;

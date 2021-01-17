@@ -16,6 +16,9 @@ public class Quota {
 		this.valore = valore;
 	}
 	
+	/**
+	 * aggiunge una nuova quota al file 'Quote.json'
+	 */
 	public void aggiungiQuota() {
 		//Crea oggetto json
 		JSONObject quota =new JSONObject();
@@ -30,6 +33,11 @@ public class Quota {
 
 	}
 
+	/**
+	 * controlla se l'id della quota corrisponde ad un certo id passato come parametro
+	 * @param id valore da confrontare con l'id della quota
+	 * @return true se sono uguali; false altrimenti
+	 */
 	public boolean checkID(int id) {
 		if(this.idCorsa == id) {
 			return true;

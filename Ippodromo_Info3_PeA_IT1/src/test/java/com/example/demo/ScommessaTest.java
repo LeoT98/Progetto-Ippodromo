@@ -41,7 +41,7 @@ class ScommessaTest {
 			BufferedReader br = new BufferedReader(f);
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
-				    Scommessa i=new Scommessa((int)x.get("idCorsa"),(int)x.get("Cavallo"),(int)x.get("importo"));
+				    Scommessa i=new Scommessa(x.getInt("idCorsa"),x.getInt("idCavallo"),x.getInt("importo"),x.getInt("idScommessa"));
 				    if(i.getIDCorsa()==999999) {
 				    		jl.add(i);
 				    }
@@ -68,7 +68,7 @@ class ScommessaTest {
 			}catch(Exception e){}
 		//riscrive il file
 		try{
-			FileWriter f=new FileWriter("Quote.json",true);
+			FileWriter f=new FileWriter("Scommesse.json",true);
 			for(int c=0;c<jl1.size();c++) {
 				f.write(jl1.get(c).toString());
 				f.write("\n");

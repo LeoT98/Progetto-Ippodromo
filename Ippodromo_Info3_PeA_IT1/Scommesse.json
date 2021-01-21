@@ -1,2 +1,6 @@
-{"idCavallo":1,"idScommessa":0,"importo":1000,"idCorsa":0}
-{"idCavallo":2,"idScommessa":0,"importo":1000.8,"idCorsa":0}
+{"idCavallo":0,"idScommessa":0,"importo":20,"idCorsa":0}
+{"idCavallo":0,"idScommessa":1,"importo":30,"idCorsa":0}
+{"idCavallo":1,"idScommessa":2,"importo":30,"idCorsa":0}
+{"idCavallo":2,"idScommessa":3,"importo":30,"idCorsa":0}
+{"idCavallo":2,"idScommessa":4,"importo":15,"idCorsa":0}
+{"idCavallo":2,"idScommessa":5,"importo":18,"idCorsa":0}

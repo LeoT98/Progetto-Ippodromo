@@ -42,7 +42,7 @@ public class DatiScommessa {
 				BufferedReader br = new BufferedReader(f);
 				 while ((stringa = br.readLine()) != null) {
 					    JSONObject j = new JSONObject(stringa);
-					    Quota quota = new Quota((int)j.get("idCorsa"),(int)j.get("idCavallo"),j.getDouble("Valore"));
+					    Quota quota = new Quota(j.getInt("idCorsa"),j.getInt("idCavallo"),j.getDouble("Valore"));
 					    if(quota.checkID(Integer.parseInt(idCorsa))) {
 					    		listaQuote.add(quota);
 					    }
@@ -65,7 +65,7 @@ public class DatiScommessa {
 				BufferedReader br = new BufferedReader(f);
 				 while ((stringa = br.readLine()) != null) {
 					    JSONObject j = new JSONObject(stringa);
-					    Scommessa s = new Scommessa((int)j.get("idCorsa"),(int)j.get("idCavallo"),j.getDouble("importo"),(int)j.get("idScommessa"));
+					    Scommessa s = new Scommessa(j.getInt("idCorsa"),j.getInt("idCavallo"),j.getDouble("importo"),j.getInt("idScommessa"));
 					    if(s.getIDCorsa()==Integer.parseInt(idCorsa)) {
 					    		listaS.add(s);
 					    }
@@ -90,7 +90,7 @@ public class DatiScommessa {
 				BufferedReader br = new BufferedReader(f);
 				 while ((stringa = br.readLine()) != null) {
 					    JSONObject x = new JSONObject(stringa);
-					    Scommessa i = new Scommessa((int)x.get("IDCorsa"),(int)x.get("Cavallo"), (double)x.get("importo"));
+					    Scommessa i = new Scommessa(x.getInt("idCorsa"),x.getInt("idCavallo"), x.getDouble("importo"),x.getInt("idScommessa"));
 					    if(i.checkIDScommessa(Integer.parseInt(idCorsa))) {
 					    	listaScommesse.add(i);
 					    }
@@ -106,23 +106,31 @@ public class DatiScommessa {
 			//non ho ancora considerato il cavallo x
 			if(Collections.frequency(listaId, listaScommesse.get(i).getCavallo()) == 0) {
 				//conto il numero di scommesse sul cavallo x
-				int ripetizione = Collections.frequency(listaScommesse, listaScommesse.get(i).getCavallo());
+				int ripetizioni=0;
+				for (Scommessa scom: listaScommesse) {
+				    if (scom.getCavallo()==listaScommesse.get(i).getCavallo()) {
+				    	ripetizioni++;
+				    }
+				}
 				//utilizzo improprio di quota per memorizzare il numero di scommesse del cavallo x
-			    listaQuote.add(new Quota(Integer.parseInt(idCorsa), listaScommesse.get(i).getCavallo(), ripetizione));
+			    listaQuote.add(new Quota(Integer.parseInt(idCorsa), listaScommesse.get(i).getCavallo(), ripetizioni));
 				listaId.add(listaScommesse.get(i).getCavallo());
 				}
 			}
 				
 			//bisogna svuotare questa lista non so se si fa così
-			listaId.removeAll(listaId);
-				
+			listaId.clear();
+			System.out.println(listaQuote.size());
 			//ordino la lista delle quote dalla più piccola (cavallo con meno scommesse) alla più grande
-			for(int i = 0; i<listaQuote.size(); i++) {
-				for(int j = i+1; j<listaQuote.size()-1; j++) {
-					if(listaQuote.get(i).getValore() > listaQuote.get(j).getValore()) {
+			for(int i = 0; i<listaQuote.size()-1; i++) {
+				for(int j = i+1; j<listaQuote.size(); j++) {
+					System.out.println(listaQuote.get(i).getValore());
+					System.out.println(listaQuote.get(j).getValore());
+					if(listaQuote.get(i).getValore() < listaQuote.get(j).getValore()) {
 						Quota temp = listaQuote.get(i);
-						listaQuote.add(i, listaQuote.get(j));
-						listaQuote.add(j, temp);
+						listaQuote.set(i, listaQuote.get(j));
+						listaQuote.set(j, temp);
+					
 					}
 				}
 			}

@@ -53,20 +53,7 @@ public class Biglietto {
 			f.write("\n");
 		}catch(Exception e){}
 	}
-	
-	
-	/**
-	 * ritorna, come String, il bilgietto in formato json
-	 */
-	public String toString() {
-		JSONObject biglietto=new JSONObject();
-		biglietto.put("ora", ora);
-		biglietto.put("data", data.toString());
-		biglietto.put("zona", zona);
-		biglietto.put("prezzo", prezzo);
-		biglietto.put("id", id);
-		return biglietto.toString();
-	}
+
 	
 	public int getId() {
 		return id;

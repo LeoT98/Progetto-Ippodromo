@@ -1,2 +1,3 @@
-{"idCorsa":0,"idCavallo":1,"Valore":3}
-{"idCorsa":0,"idCavallo":2,"Valore":2}
+{"idCavallo":2,"Valore":1.5,"idCorsa":0}
+{"idCavallo":0,"Valore":2.25,"idCorsa":0}
+{"idCavallo":1,"Valore":3.375,"idCorsa":0}

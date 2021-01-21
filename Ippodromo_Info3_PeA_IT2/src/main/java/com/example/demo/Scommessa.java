@@ -55,7 +55,7 @@ public Scommessa(int idCorsa, int idCavallo, double importo, int idScommessa) {
 	}
 	
 	/**
-	 * controlla se l'id di questa scommessa corrisponde ad un certo id 
+	 * controlla se l'id della corsa a cui è associata uqesta scommessa coincide con un certo id 
 	 * @param idcorsa
 	 * @return
 	 */

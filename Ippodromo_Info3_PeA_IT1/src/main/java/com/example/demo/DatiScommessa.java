@@ -74,7 +74,12 @@ public class DatiScommessa {
 			return listaS;
 		}
 		
-		
+		/**
+		 * calcola le quote relative ai cavalli di una corsa: 
+		 * i cavalli su cui più persone hanno scommesso avranno quota minore
+		 * 
+		 * @param idCorsa
+		 */
 		@GetMapping("/calcolaQuote")
 		public void calcolaQuote(@RequestParam(value = "idCorsa", defaultValue = "-1") String idCorsa) {
 			String stringa;

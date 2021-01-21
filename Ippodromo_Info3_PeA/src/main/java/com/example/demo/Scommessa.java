@@ -23,6 +23,13 @@ public class Scommessa {
 		this.importo = importo;
 	}
 	
+public Scommessa(int idCorsa, int idCavallo, double importo, int idScommessa) {
+	this.id=idScommessa;
+	this.idCorsa = idCorsa;
+	this.idCavallo = idCavallo;
+	this.importo = importo;
+	}
+
 /**
  * aggiunge la scommessa al file 'Scommesse.json'
  */
@@ -31,7 +38,7 @@ public class Scommessa {
 		JSONObject scommessa =new JSONObject();
 		scommessa.put("idScommessa", id);
 		scommessa.put("idCorsa", idCorsa);
-		scommessa.put("Cavallo", idCavallo);
+		scommessa.put("idCavallo", idCavallo);
 		scommessa.put("importo", importo);
 		//scrive su file
 		try(FileWriter f=new FileWriter("Scommesse.json",true)){

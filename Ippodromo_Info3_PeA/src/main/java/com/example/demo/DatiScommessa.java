@@ -20,8 +20,8 @@ public class DatiScommessa {
  * @param importo
  */
 		@GetMapping("/aggiungiScommessa")
-		public void aggiungiScommessa(@RequestParam(value = "IDCorsa", defaultValue = "-1") String idCorsa,
-												  @RequestParam(value = "IDCavallo", defaultValue = "-1") String idCavallo,
+		public void aggiungiScommessa(@RequestParam(value = "idCorsa", defaultValue = "-1") String idCorsa,
+												  @RequestParam(value = "idCavallo", defaultValue = "-1") String idCavallo,
 												  @RequestParam(value = "importo", defaultValue = "-1") String importo) {
 			Scommessa s = new Scommessa(Integer.parseInt(idCorsa), Integer.parseInt(idCavallo), Double.parseDouble(importo));
 			s.aggiungiScommessa();
@@ -32,7 +32,7 @@ public class DatiScommessa {
 	 * @return
 	 */
 		@GetMapping("/mostraQuote")
-		public List<Quota> mostraQuote(@RequestParam(value = "IDCorsa", defaultValue = "-1") String idCorsa) {
+		public List<Quota> mostraQuote(@RequestParam(value = "idCorsa", defaultValue = "-1") String idCorsa) {
 			String stringa;
 			List<Quota> listaQuote = new ArrayList<Quota>();
 			// legge il file e salva gli elementi da tenere
@@ -40,7 +40,7 @@ public class DatiScommessa {
 				BufferedReader br = new BufferedReader(f);
 				 while ((stringa = br.readLine()) != null) {
 					    JSONObject j = new JSONObject(stringa);
-					    Quota quota = new Quota((int)j.get("IDCorsa"),(int)j.get("IDCavallo"),(double)j.get("Valore"));
+					    Quota quota = new Quota((int)j.get("idCorsa"),(int)j.get("idCavallo"),j.getDouble("Valore"));
 					    if(quota.checkID(Integer.parseInt(idCorsa))) {
 					    		listaQuote.add(quota);
 					    }
@@ -55,7 +55,7 @@ public class DatiScommessa {
 		 * @return
 		 */
 		@GetMapping("/mostraScommesse")
-		public List<Scommessa> mostraScommesse(@RequestParam(value = "IDCorsa", defaultValue = "1") String idCorsa) {
+		public List<Scommessa> mostraScommesse(@RequestParam(value = "idCorsa", defaultValue = "1") String idCorsa) {
 			String stringa;
 			List<Scommessa> listaS = new ArrayList<Scommessa>();
 			// legge il file e salva gli elementi da tenere
@@ -63,7 +63,7 @@ public class DatiScommessa {
 				BufferedReader br = new BufferedReader(f);
 				 while ((stringa = br.readLine()) != null) {
 					    JSONObject j = new JSONObject(stringa);
-					    Scommessa s = new Scommessa((int)j.get("idCorsa"),(int)j.get("Cavallo"),(double)j.get("importo"));
+					    Scommessa s = new Scommessa((int)j.get("idCorsa"),(int)j.get("idCavallo"),j.getDouble("importo"),(int)j.get("idScommessa"));
 					    if(s.getIDCorsa()==Integer.parseInt(idCorsa)) {
 					    		listaS.add(s);
 					    }
@@ -74,7 +74,7 @@ public class DatiScommessa {
 		
 		
 		@GetMapping("/calcolaQuote")
-		public void calcolaQuote(@RequestParam(value = "IDCorsa", defaultValue = "-1") String idCorsa) {
+		public void calcolaQuote(@RequestParam(value = "idCorsa", defaultValue = "-1") String idCorsa) {
 			//TO DO
 		}
 

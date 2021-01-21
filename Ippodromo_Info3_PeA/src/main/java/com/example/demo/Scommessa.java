@@ -23,6 +23,13 @@ public class Scommessa {
 		this.importo = importo;
 	}
 	
+/**
+ *
+ * @param idCorsa the id corsa
+ * @param idCavallo the id cavallo
+ * @param importo the importo
+ * @param idScommessa the id scommessa
+ */
 public Scommessa(int idCorsa, int idCavallo, double importo, int idScommessa) {
 	this.id=idScommessa;
 	this.idCorsa = idCorsa;

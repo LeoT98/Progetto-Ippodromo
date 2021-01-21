@@ -40,7 +40,7 @@ class QuotaTest {
 			BufferedReader br = new BufferedReader(f);
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
-				    Quota i=new Quota((int)x.get("idCorsa"),(int)x.get("idCavallo"),(int)x.get("Valore"));
+				    Quota i=new Quota(x.getInt("idCorsa"),x.getInt("idCavallo"),x.getDouble("Valore"));
 				    if(i.checkID(999999)) {
 				    		jl.add(i);
 				    }

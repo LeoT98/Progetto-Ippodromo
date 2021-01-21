@@ -41,7 +41,7 @@ class ScommessaTest {
 			BufferedReader br = new BufferedReader(f);
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
-				    Scommessa i=new Scommessa(x.getInt("idCorsa"),x.getInt("idCavallo"),x.getInt("importo"));
+				    Scommessa i=new Scommessa(x.getInt("idCorsa"),x.getInt("idCavallo"),x.getInt("importo"),x.getInt("idScommessa"));
 				    if(i.getIDCorsa()==999999) {
 				    		jl.add(i);
 				    }

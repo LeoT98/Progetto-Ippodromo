@@ -40,7 +40,7 @@ class IscrizioneTest {
 			BufferedReader br = new BufferedReader(f);
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
-				    Iscrizione i=new Iscrizione((int)x.get("idFantino"),(int)x.get("idCavallo"),(int)x.get("idCorsa"));
+				    Iscrizione i=new Iscrizione(x.getInt("idFantino"),x.getInt("idCavallo"),x.getInt("idCorsa"));
 				    if(i.checkID(99999999)) {
 				    		jl.add(i);
 				    }

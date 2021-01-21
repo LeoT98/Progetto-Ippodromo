@@ -42,7 +42,7 @@ public class DatiScommessa {
 				BufferedReader br = new BufferedReader(f);
 				 while ((stringa = br.readLine()) != null) {
 					    JSONObject j = new JSONObject(stringa);
-					    Quota quota = new Quota((int)j.get("idCorsa"),(int)j.get("idCavallo"),j.getDouble("Valore"));
+					    Quota quota = new Quota(j.getInt("idCorsa"),j.getInt("idCavallo"),j.getDouble("Valore"));
 					    if(quota.checkID(Integer.parseInt(idCorsa))) {
 					    		listaQuote.add(quota);
 					    }
@@ -65,7 +65,7 @@ public class DatiScommessa {
 				BufferedReader br = new BufferedReader(f);
 				 while ((stringa = br.readLine()) != null) {
 					    JSONObject j = new JSONObject(stringa);
-					    Scommessa s = new Scommessa((int)j.get("idCorsa"),(int)j.get("idCavallo"),j.getDouble("importo"),(int)j.get("idScommessa"));
+					    Scommessa s = new Scommessa(j.getInt("idCorsa"),j.getInt("idCavallo"),j.getDouble("importo"),j.getInt("idScommessa"));
 					    if(s.getIDCorsa()==Integer.parseInt(idCorsa)) {
 					    		listaS.add(s);
 					    }
@@ -90,7 +90,7 @@ public class DatiScommessa {
 				BufferedReader br = new BufferedReader(f);
 				 while ((stringa = br.readLine()) != null) {
 					    JSONObject x = new JSONObject(stringa);
-					    Scommessa i = new Scommessa((int)x.get("idCorsa"),(int)x.get("idCavallo"), x.getDouble("importo"),(int)x.get("idScommessa"));
+					    Scommessa i = new Scommessa(x.getInt("idCorsa"),x.getInt("idCavallo"), x.getDouble("importo"),x.getInt("idScommessa"));
 					    if(i.checkIDScommessa(Integer.parseInt(idCorsa))) {
 					    	listaScommesse.add(i);
 					    }

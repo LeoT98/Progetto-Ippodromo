@@ -3,6 +3,7 @@ package com.example.demo;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.json.JSONObject;
@@ -75,7 +76,58 @@ public class DatiScommessa {
 		
 		@GetMapping("/calcolaQuote")
 		public void calcolaQuote(@RequestParam(value = "idCorsa", defaultValue = "-1") String idCorsa) {
-			//TO DO
+			String stringa;
+			//contiene la lista della scommesse con IDCorsa richiesto
+			List<Scommessa> listaScommesse = new ArrayList<Scommessa>();
+
+			try(FileReader f = new FileReader("Scommesse.json")  ){
+				BufferedReader br = new BufferedReader(f);
+				 while ((stringa = br.readLine()) != null) {
+					    JSONObject x = new JSONObject(stringa);
+					    Scommessa i = new Scommessa((int)x.get("IDCorsa"),(int)x.get("Cavallo"), (double)x.get("importo"));
+					    if(i.checkIDScommessa(Integer.parseInt(idCorsa))) {
+					    	listaScommesse.add(i);
+					    }
+					 }
+				 f.close();}catch(Exception e) {}
+				
+			List<Quota> listaQuote = new ArrayList<Quota>();
+				
+			List<Integer> listaId = new ArrayList<Integer>();
+			listaId.add(-1);
+				
+			for(int i = 0; i<listaScommesse.size(); i++) {
+			//non ho ancora considerato il cavallo x
+			if(Collections.frequency(listaId, listaScommesse.get(i).getCavallo()) == 0) {
+				//conto il numero di scommesse sul cavallo x
+				int ripetizione = Collections.frequency(listaScommesse, listaScommesse.get(i).getCavallo());
+				//utilizzo improprio di quota per memorizzare il numero di scommesse del cavallo x
+			    listaQuote.add(new Quota(Integer.parseInt(idCorsa), listaScommesse.get(i).getCavallo(), ripetizione));
+				listaId.add(listaScommesse.get(i).getCavallo());
+				}
+			}
+				
+			//bisogna svuotare questa lista non so se si fa così
+			listaId.removeAll(listaId);
+				
+			//ordino la lista delle quote dalla più piccola (cavallo con meno scommesse) alla più grande
+			for(int i = 0; i<listaQuote.size(); i++) {
+				for(int j = i+1; j<listaQuote.size()-1; j++) {
+					if(listaQuote.get(i).getValore() > listaQuote.get(j).getValore()) {
+						Quota temp = listaQuote.get(i);
+						listaQuote.add(i, listaQuote.get(j));
+						listaQuote.add(j, temp);
+					}
+				}
+			}
+				
+			double c = 1.5;
+			//aggiungo le quote (multipli di 1.5)
+			for(int i = 0; i<listaQuote.size(); i++) {
+				Quota q = new Quota(Integer.parseInt(idCorsa),listaQuote.get(i).getIDCavallo(),c);
+				q.aggiungiQuota();
+				c *= 1.5; 
+			}
 		}
 
 }

@@ -90,7 +90,7 @@ public class DatiScommessa {
 				BufferedReader br = new BufferedReader(f);
 				 while ((stringa = br.readLine()) != null) {
 					    JSONObject x = new JSONObject(stringa);
-					    Scommessa i = new Scommessa((int)x.get("IDCorsa"),(int)x.get("Cavallo"), (double)x.get("importo"));
+					    Scommessa i = new Scommessa((int)x.get("idCorsa"),(int)x.get("idCavallo"), x.getDouble("importo"),(int)x.get("idScommessa"));
 					    if(i.checkIDScommessa(Integer.parseInt(idCorsa))) {
 					    	listaScommesse.add(i);
 					    }
@@ -104,10 +104,12 @@ public class DatiScommessa {
 				
 			for(int i = 0; i<listaScommesse.size(); i++) {
 			//non ho ancora considerato il cavallo x
+				System.out.println(Collections.frequency(listaId, listaScommesse.get(i).getCavallo()) == 0);
 			if(Collections.frequency(listaId, listaScommesse.get(i).getCavallo()) == 0) {
 				//conto il numero di scommesse sul cavallo x
 				int ripetizione = Collections.frequency(listaScommesse, listaScommesse.get(i).getCavallo());
 				//utilizzo improprio di quota per memorizzare il numero di scommesse del cavallo x
+				System.out.println(ripetizione);
 			    listaQuote.add(new Quota(Integer.parseInt(idCorsa), listaScommesse.get(i).getCavallo(), ripetizione));
 				listaId.add(listaScommesse.get(i).getCavallo());
 				}

@@ -1,9 +1,2 @@
-{"idCavallo":-1,"idScommessa":0,"importo":-1,"idCorsa":-1}
-{"idCavallo":-1,"idScommessa":2,"importo":-1,"idCorsa":-1}
-{"idCavallo":-1,"idScommessa":3,"importo":-1,"idCorsa":-1}
-{"idCavallo":-1,"idScommessa":4,"importo":-1,"idCorsa":-1}
-{"idCavallo":-1,"idScommessa":5,"importo":-1,"idCorsa":-1}
-{"idCavallo":-1,"idScommessa":6,"importo":-1,"idCorsa":-1}
-{"idCavallo":-1,"idScommessa":7,"importo":-1,"idCorsa":-1}
-{"idCavallo":-1,"idScommessa":8,"importo":-1,"idCorsa":-1}
-{"idCavallo":-1,"idScommessa":9,"importo":-1,"idCorsa":-1}
+{"idCavallo":1,"idScommessa":0,"importo":1000,"idCorsa":0}
+{"idCavallo":2,"idScommessa":0,"importo":1000.8,"idCorsa":0}

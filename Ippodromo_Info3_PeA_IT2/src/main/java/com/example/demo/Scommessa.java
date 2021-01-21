@@ -24,6 +24,20 @@ public class Scommessa {
 	}
 	
 /**
+ *
+ * @param idCorsa the id corsa
+ * @param idCavallo the id cavallo
+ * @param importo the importo
+ * @param idScommessa the id scommessa
+ */
+public Scommessa(int idCorsa, int idCavallo, double importo, int idScommessa) {
+	this.id=idScommessa;
+	this.idCorsa = idCorsa;
+	this.idCavallo = idCavallo;
+	this.importo = importo;
+	}
+
+/**
  * aggiunge la scommessa al file 'Scommesse.json'
  */
 	public void aggiungiScommessa() {
@@ -39,6 +53,18 @@ public class Scommessa {
 			f.write("\n");
 		}catch(Exception e){}
 	}
+	
+	/**
+	 * controlla se l'id di questa scommessa corrisponde ad un certo id 
+	 * @param idcorsa
+	 * @return
+	 */
+		public boolean checkIDScommessa(int idcorsa) {
+			if(this.idCorsa==idcorsa) {
+				return true;
+			}
+			return false;
+		}
 	
 	public int getId() {
 		return id;

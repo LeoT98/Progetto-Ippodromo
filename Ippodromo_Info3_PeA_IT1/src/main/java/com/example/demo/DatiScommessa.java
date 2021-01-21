@@ -120,14 +120,17 @@ public class DatiScommessa {
 				
 			//bisogna svuotare questa lista non so se si fa così
 			listaId.clear();
-				
+			System.out.println(listaQuote.size());
 			//ordino la lista delle quote dalla più piccola (cavallo con meno scommesse) alla più grande
-			for(int i = 0; i<listaQuote.size(); i++) {
-				for(int j = i+1; j<listaQuote.size()-1; j++) {
-					if(listaQuote.get(i).getValore() > listaQuote.get(j).getValore()) {
+			for(int i = 0; i<listaQuote.size()-1; i++) {
+				for(int j = i+1; j<listaQuote.size(); j++) {
+					System.out.println(listaQuote.get(i).getValore());
+					System.out.println(listaQuote.get(j).getValore());
+					if(listaQuote.get(i).getValore() < listaQuote.get(j).getValore()) {
 						Quota temp = listaQuote.get(i);
-						listaQuote.add(i, listaQuote.get(j));
-						listaQuote.add(j, temp);
+						listaQuote.set(i, listaQuote.get(j));
+						listaQuote.set(j, temp);
+					
 					}
 				}
 			}

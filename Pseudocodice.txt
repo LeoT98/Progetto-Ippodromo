@@ -1,0 +1,25 @@
+aggiunta(){
+  crea json x
+  attribuisci valori a x
+  scrivi x su file		
+}
+
+
+rimozione(id: int){
+  crea lista di json jl
+  foreach(oggetto json x nel file)
+    if(x.id==id)
+      jl.add(x)
+  
+  cancella il file
+  riscrivi il file
+}
+
+
+list mostra(i){
+  crea lista l
+  foreach(oggetto json x nel file)
+    if(x.attributo==i)
+      l.add(x)
+  return l
+}

@@ -65,7 +65,7 @@ public class DatiScommessa {
 				BufferedReader br = new BufferedReader(f);
 				 while ((stringa = br.readLine()) != null) {
 					    JSONObject j = new JSONObject(stringa);
-					    Scommessa s = new Scommessa((int)j.get("idCorsa"),(int)j.get("Cavallo"),(double)j.get("importo"));
+					    Scommessa s = new Scommessa(j.getInt("idCorsa"),j.getInt("idCavallo"),j.getDouble("importo"),j.getInt("idScommessa"));
 					    if(s.getIDCorsa()==Integer.parseInt(idCorsa)) {
 					    		listaS.add(s);
 					    }

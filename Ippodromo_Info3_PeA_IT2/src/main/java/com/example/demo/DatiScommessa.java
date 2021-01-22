@@ -22,8 +22,8 @@ public class DatiScommessa {
  * @param importo
  */
 		@GetMapping("/aggiungiScommessa")
-		public void aggiungiScommessa(@RequestParam(value = "IDCorsa", defaultValue = "-1") String idCorsa,
-												  @RequestParam(value = "IDCavallo", defaultValue = "-1") String idCavallo,
+		public void aggiungiScommessa(@RequestParam(value = "idCorsa", defaultValue = "-1") String idCorsa,
+												  @RequestParam(value = "idCavallo", defaultValue = "-1") String idCavallo,
 												  @RequestParam(value = "importo", defaultValue = "-1") String importo) {
 			Scommessa s = new Scommessa(Integer.parseInt(idCorsa), Integer.parseInt(idCavallo), Double.parseDouble(importo));
 			s.aggiungiScommessa();
@@ -34,7 +34,7 @@ public class DatiScommessa {
 	 * @return
 	 */
 		@GetMapping("/mostraQuote")
-		public List<Quota> mostraQuote(@RequestParam(value = "IDCorsa", defaultValue = "-1") String idCorsa) {
+		public List<Quota> mostraQuote(@RequestParam(value = "idCorsa", defaultValue = "-1") String idCorsa) {
 			String stringa;
 			List<Quota> listaQuote = new ArrayList<Quota>();
 			// legge il file e salva gli elementi da tenere
@@ -57,7 +57,7 @@ public class DatiScommessa {
 		 * @return
 		 */
 		@GetMapping("/mostraScommesse")
-		public List<Scommessa> mostraScommesse(@RequestParam(value = "IDCorsa", defaultValue = "1") String idCorsa) {
+		public List<Scommessa> mostraScommesse(@RequestParam(value = "idCorsa", defaultValue = "1") String idCorsa) {
 			String stringa;
 			List<Scommessa> listaS = new ArrayList<Scommessa>();
 			// legge il file e salva gli elementi da tenere

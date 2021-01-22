@@ -44,7 +44,7 @@ public class DatiCorsa {
 			BufferedReader br = new BufferedReader(f);
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
-				    Corsa i=new Corsa((String)x.get("ora"),(String)x.get("data"),(int)x.get("maxPartecipanti"),(int)x.get("id"));
+				    Corsa i=new Corsa(x.getString("ora"),x.getString("data"),x.getInt("maxPartecipanti"),x.getInt("id"));
 				    if(i.getData().equals(dataConf)) {
 				    		jl.add(i);
 				    }

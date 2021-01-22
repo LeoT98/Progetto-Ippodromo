@@ -54,7 +54,7 @@ public class DatiCorsa {
 	}
 	
 	/**
-	 * rimuove una corsa dal file 'corse.json'
+	 * rimuove una corsa dal file 'corse.json' e le connesse iscrizioni nel file 'iscrizioni.json'
 	 * @param idCorsa
 	 */
 	@GetMapping("/rimuoviCorsa")
@@ -67,7 +67,7 @@ public class DatiCorsa {
 			BufferedReader br = new BufferedReader(f);
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
-				    if((int)x.get("id")!=id) {
+				    if(x.getInt("id")!=id) {
 				    		jl.add(x);
 				    }
 			  }
@@ -80,6 +80,30 @@ public class DatiCorsa {
 		//riscrive il file
 		try{
 			FileWriter f=new FileWriter("corse.json",true);
+			for(int c=0;c<jl.size();c++) {
+				f.write(jl.get(c).toString());
+				f.write("\n");
+			}	f.close();	}catch(Exception e){}
+		
+		jl.clear();
+		// legge il file e salva gli elementi da tenere
+		try(FileReader f = new FileReader("iscrizioni.json")  ){
+			BufferedReader br = new BufferedReader(f);
+			 while ((st = br.readLine()) != null) {
+				    JSONObject x=new JSONObject(st);
+				    if(x.getInt("idCorsa")!=id) {
+				    		jl.add(x);
+				    }
+			  }
+			 f.close();}catch(Exception e) {}
+		//svuota file
+		try{
+			FileWriter f=new FileWriter("iscrizioni.json");
+			f.close();
+			}catch(Exception e){}
+		//riscrive il file
+		try{
+			FileWriter f=new FileWriter("iscrizioni.json",true);
 			for(int c=0;c<jl.size();c++) {
 				f.write(jl.get(c).toString());
 				f.write("\n");

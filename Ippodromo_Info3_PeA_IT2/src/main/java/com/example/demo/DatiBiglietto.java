@@ -45,7 +45,7 @@ public class DatiBiglietto {
 			BufferedReader br = new BufferedReader(f);
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
-				    if((int)x.get("id")!=id) {
+				    if(x.getInt("id")!=id) {
 				    		jl.add(x);
 				    }
 			  }

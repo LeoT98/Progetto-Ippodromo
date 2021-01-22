@@ -67,7 +67,7 @@ public class DatiIscrizione {
 			BufferedReader br = new BufferedReader(f);
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
-				    if(x.getInt("idCorsa")!=idCo && x.getInt("idCavallo")!=idCa) {
+				    if(x.getInt("idCorsa")!=idCo || x.getInt("idCavallo")!=idCa) {
 				    		jl.add(x);
 				    }
 			  }

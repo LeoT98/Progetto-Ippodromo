@@ -40,8 +40,7 @@ public class DatiBiglietto {
 		int id=Integer.parseInt(idBiglietto);
 		String st;
 		ArrayList<JSONObject> jl=new ArrayList<JSONObject>();
-		// legge il file e salva gli elementi da tenere
-		try(FileReader f = new FileReader("biglietti.json")  ){
+		try(FileReader f = new FileReader("biglietti.json")  ){    // legge il file e salva gli elementi da tenere
 			BufferedReader br = new BufferedReader(f);
 			 while ((st = br.readLine()) != null) {
 				    JSONObject x=new JSONObject(st);
@@ -50,13 +49,11 @@ public class DatiBiglietto {
 				    }
 			  }
 			 f.close();}catch(Exception e) {}
-		//svuota file
-		try{
+		try{      	//svuota file
 			FileWriter f=new FileWriter("biglietti.json");
 			f.close();
 			}catch(Exception e){}
-		//riscrive il file
-		try{
+		try{   		//riscrive il file
 			FileWriter f=new FileWriter("biglietti.json",true);
 			for(int c=0;c<jl.size();c++) {
 				f.write(jl.get(c).toString());

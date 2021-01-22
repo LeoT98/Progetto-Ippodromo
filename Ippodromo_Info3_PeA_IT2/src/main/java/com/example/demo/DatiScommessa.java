@@ -160,7 +160,6 @@ public class DatiScommessa {
 						Quota temp = listaQuote.get(i);
 						listaQuote.set(i, listaQuote.get(j));
 						listaQuote.set(j, temp);
-					
 					}
 				}
 			}
@@ -173,5 +172,4 @@ public class DatiScommessa {
 				c *= 1.5; 
 			}
 		}
-
 }

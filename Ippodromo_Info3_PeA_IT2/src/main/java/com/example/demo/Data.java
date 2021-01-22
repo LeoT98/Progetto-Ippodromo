@@ -31,10 +31,23 @@ public class Data {
 	
 	/**
 	 * controlla se questa data è uguale a quella passata
-	 * @param dataConf
+	 * @param dataConf è un oggettp Data
 	 * @return
 	 */
 	public boolean equals(Data dataConf) {
+		if(this.giorno==dataConf.giorno & this.mese==dataConf.mese & this.anno ==dataConf.anno) {
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 *  controlla se questa data è uguale a quella passata
+	 * @param d è un oggetto String
+	 * @return
+	 */
+	public boolean equals(String d) {
+		Data dataConf=new Data(d);
 		if(this.giorno==dataConf.giorno & this.mese==dataConf.mese & this.anno ==dataConf.anno) {
 			return true;
 		}

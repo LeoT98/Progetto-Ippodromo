@@ -42,7 +42,7 @@ public class DatiScommessa {
 				BufferedReader br = new BufferedReader(f);
 				 while ((stringa = br.readLine()) != null) {
 					    JSONObject j = new JSONObject(stringa);
-					    Quota quota = new Quota((int)j.get("IDCorsa"),(int)j.get("IDCavallo"),(double)j.get("Valore"));
+					    Quota quota = new Quota(j.getInt("idCorsa"),j.getInt("idCavallo"),j.getDouble("Valore"));
 					    if(quota.checkID(Integer.parseInt(idCorsa))) {
 					    		listaQuote.add(quota);
 					    }

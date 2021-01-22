@@ -88,7 +88,7 @@ public class DatiScommessa {
 				BufferedReader br = new BufferedReader(f);
 				 while ((st = br.readLine()) != null) {
 					    JSONObject x=new JSONObject(st);
-					    if((int)x.get("idScommessa")!=id) {
+					    if(x.getInt("idScommessa")!=id) {
 					    		jl.add(x);
 					    }
 				  }

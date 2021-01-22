@@ -53,9 +53,7 @@ public class Biglietto {
 			f.write("\n");
 		}catch(Exception e){}
 	}
-	
-
-	
+		
 	public int getId() {
 		return id;
 	}

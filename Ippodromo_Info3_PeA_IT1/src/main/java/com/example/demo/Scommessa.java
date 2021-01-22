@@ -82,15 +82,5 @@ public Scommessa(int idCorsa, int idCavallo, double importo, int idScommessa) {
 		return importo;
 	}
 	
-	@Override
-    public boolean equals(Object arg0) {
-        boolean flag=false;
-        System.out.println("prova");
-        if(this.getCavallo()==(int)arg0) {
-        	flag=true;
-        }
-        return flag;
-        
-    }
 	
 }
